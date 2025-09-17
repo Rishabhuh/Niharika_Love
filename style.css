@@ -1,0 +1,304 @@
+/* ---------------- General Styling ---------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ffd6e8, #ffeefc);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #ff4d88;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+h1.glow {
+  margin-bottom: 5px; /* reduce gap */
+  font-size: 2.8em;
+  color: #ff3385;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff80bf, 0 0 30px #ff4da6;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 5px #fff, 0 0 10px #ff80bf; }
+  to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff1a8c; }
+}
+
+/* ---------------- Floating Hearts Background ---------------- */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  top: -20px;
+  font-size: 22px;
+  opacity: 0.8;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ---------------- Main Container ---------------- */
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ---------------- Card Components ---------------- */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* ---------------- Love Things ---------------- */
+.love-things ul {
+  list-style: none;
+  padding: 0;
+}
+
+.love-things li {
+  margin: 12px 0;
+  font-size: 1.3em;
+  color: #e60073;
+  background: #fff0f6;
+  padding: 8px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.15);
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.love-things li:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* ---------------- Buttons ---------------- */
+.buttons {
+  margin: 30px 0;
+}
+
+.btn {
+  padding: 12px 25px;
+  margin: 12px;
+  border: none;
+  background: linear-gradient(135deg, #ff80bf, #ff4da6);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(255, 77, 166, 0.3);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff4da6, #ff1a8c);
+  transform: scale(1.15);
+  box-shadow: 0 10px 20px rgba(255, 26, 140, 0.4);
+}
+
+/* ---------------- Hero & Heroine Photos ---------------- */
+.photo-pair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 20px auto;
+  flex-wrap: nowrap; /* always side by side */
+}
+
+/* Hero & Heroine Cards */
+.photo-pair .hero-card,
+.photo-pair .heroine-card {
+  background: #fff;
+  border: 3px solid #ff80bf;
+  border-radius: 15px;
+  padding: 12px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.photo-pair .hero-card:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+.photo-pair .heroine-card:hover {
+  transform: rotate(2deg) scale(1.05);
+}
+
+.photo-pair img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+}
+
+.photo-pair p {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #ff3385;
+  font-size: 1.1em;
+}
+
+/* Story line in center */
+.story-line {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #e60073;
+  max-width: 200px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------------- Polaroid Photo ---------------- */
+.photo-frame {
+  margin: 25px auto;
+  display: inline-block;
+  padding: 15px;
+  background: #fff;
+  border: 2px solid #ff80bf;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.photo-frame:hover {
+  transform: rotate(2deg) scale(1.05);
+}
+
+.photo-frame img {
+  max-width: 280px;
+  border-radius: 12px;
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #ff3385;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------------- Floating Emoji Animations (Ice Cream Shower) ---------------- */
+.floating-emojis span {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.95;
+  pointer-events: none;
+  animation: fallDown 4s linear forwards;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ---------------- Love Note Section ---------------- */
+.love-note {
+  background: linear-gradient(145deg, #fff0f8, #ffe6f2);
+  padding: 25px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  color: #e60073;
+  font-style: italic;
+  line-height: 1.8;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative border animation */
+.love-note::before {
+  content: "💌";
+  font-size: 3em;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  opacity: 0.2;
+}
+
+.love-note::after {
+  content: "💕";
+  font-size: 3em;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  opacity: 0.2;
+}
+
+/* Typewriter blinking cursor */
+#love-message::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------------- Playlist Section ---------------- */
+.playlist {
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 20px;
+  background: #fff0f6;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.playlist h2 {
+  color: #ff4d88;
+  margin-bottom: 15px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+@keyframes fallFromButton {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(0, 110vh); opacity: 0; }
+}
+
+/* Buttons Row */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
